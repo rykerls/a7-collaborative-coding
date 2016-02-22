@@ -1,0 +1,23 @@
+```{r setup, include=FALSE}
+
+library(dplyr)
+library(plotly)
+library(shiny)
+
+options(stringsAsFactors=FALSE)
+
+summary <- source('scripts/summary.r')
+g1 <- source('scripts/build-graph-1.r')
+g2 <- source('scripts/build-graph-2.r')
+
+```
+
+##---------------------------------------------------------------------------------------------##
+##Introductory Paragraph about data analysis##
+
+
+##---------------------------------------------------------------------------------------------##
+##Graph 1##
+
+##---------------------------------------------------------------------------------------------##
+##Graph 2##
