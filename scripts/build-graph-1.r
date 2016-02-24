@@ -1,6 +1,3 @@
-require(dplyr)
-require(plotly)
-
 #Function to draw a 2 dimensional histogram based on data from our class survey.
 #The histogram compares whether or not someone is a Seahawks fan to the kind of pet they like
 graph1 <- function(data) {
