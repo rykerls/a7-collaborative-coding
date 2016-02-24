@@ -1,15 +1,30 @@
+---
+title: "INFO-498F Student Survey Data and Analysis"
+output: html_document
+---
+
 ```{r setup, include=FALSE}
+###########################
+# Ryker Schwartzenberger
+# Luke Baker
+# Patrick Smith
+# Laura Rickey
+# INFO-498FE
+# a7-collaborative-coding
+###########################
 
 library(dplyr)
 library(plotly)
 
 options(stringsAsFactors=FALSE)
 
-summary <- source('scripts/summary.r')
-g1 <- source('scripts/build-graph-1.r')
-g2 <- source('scripts/build-graph-2.r')
+# Rscripts for data analysis located in the scripts/ folder.
+source('scripts/summary.r')
+source('scripts/build-graph-1.r')
+source('scripts/build-graph-2.r')
 
-data <- read.csv("https://raw.githubusercontent.com/INFO-498F/a7-survey-data/master/intro_survey_data.csv")
+# Pull student survey data from INFO-498F repository.
+data <- read.csv('https://raw.githubusercontent.com/INFO-498F/a7-survey-data/master/intro_survey_data.csv')
 
 ```
 
@@ -18,8 +33,13 @@ data <- read.csv("https://raw.githubusercontent.com/INFO-498F/a7-survey-data/mas
 
 
 ##---------------------------------------------------------------------------------------------##
+This histogram shows data from the class survey about whether a student was a Seahawks fan and whether they
+are a cat or dog person.
 
 `r graph1(data)`
 
 ##---------------------------------------------------------------------------------------------##
-##Graph 2##
+This bar graph shows the total number of participants who are interested in the Informatics major
+and the total number of participants for each grade level.
+
+`r graph2(data)`
