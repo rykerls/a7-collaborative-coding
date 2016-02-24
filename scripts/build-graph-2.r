@@ -20,18 +20,18 @@ build_graph_2 <- function(data_set) {
     colnames(info_by_year)[2-3] <-
       c("Students Interested in Informatics", "Total # of Students")
     
-    #Plotly plot settings
+    #Plotly bar plot settings
     p <- plot_ly(
       x = info_by_year$What.is.your.current.class.standing.,
       y = info_by_year$`Students Interested in Informatics`,
       name = 'Students interested in Info',
       type = "bar"
-    ) %>% add_trace(
+    ) %>% add_trace( #Adding the stacked bar
       x = info_by_year$What.is.your.current.class.standing.,
       y = info_by_year$`Total # of Students`,
       name = 'Total # of Students'
-    ) %>% layout(
-      barmode = "stack",
+    ) %>% layout( #Axes names
+      barmode = "stack", 
       xaxis = list(title = "Class Standing"),
       yaxis = list(title = "# of Students")
     )
