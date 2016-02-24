@@ -1,25 +1,50 @@
+---
+title: "INFO-498F Student Survey Data and Analysis"
+output: html_document
+---
+
 ```{r setup, include=FALSE}
+###########################
+# Ryker Schwartzenberger
+# Luke Baker
+# Patrick Smith
+# Laura Rickey
+# INFO-498FE
+# a7-collaborative-coding
+###########################
 
 library(dplyr)
 library(plotly)
 
 options(stringsAsFactors=FALSE)
 
-summary <- source('scripts/summary.r')
-g1 <- source('scripts/build-graph-1.r')
-g2 <- source('scripts/build-graph-2.r')
+# Rscripts for data analysis located in the scripts/ folder.
+source('scripts/summary.r')
+source('scripts/build-graph-1.r')
+source('scripts/build-graph-2.r')
 
-data <- read.csv("https://raw.githubusercontent.com/INFO-498F/a7-survey-data/master/intro_survey_data.csv")
+# Pull student survey data from INFO-498F repository.
+data <- read.csv('https://raw.githubusercontent.com/INFO-498F/a7-survey-data/master/intro_survey_data.csv')
+
+pet_data <- students(data)
+country_data <- countries(data)
 
 ```
 
 ##---------------------------------------------------------------------------------------------##
-##Introductory Paragraph about data analysis##
+This webpage is an analysis of the student survey taken by **`r pet_data$students`** students in INFO-498F Winter 2016. 
+Of those students, **`r pet_data$dog`** answered that they were dog people, **`r pet_data$cat`** were cat people, 
+and **`r pet_data$both`** reported that they were both cat and dog people. **`r pet_data$neither`** reported that they were neither a cat or a dog person. In addition to the data collected about cats, the survey also asked participants about where they have visited. The average number of countries visited by each student was **`r country_data$mean`**, with the maximum number of countries visited by a single student being **`r country_data$max`**. In addition, there were **`r country_data$over`** students who have visited 10 or more separate countries. 
 
 
 ##---------------------------------------------------------------------------------------------##
+This histogram shows data from the class survey about whether a student was a Seahawks fan and whether they
+are a cat or dog person.
 
 `r graph1(data)`
 
 ##---------------------------------------------------------------------------------------------##
-##Graph 2##
+This bar graph shows the total number of participants who are interested in the Informatics major
+and the total number of participants for each grade level.
+
+`r graph2(data)`

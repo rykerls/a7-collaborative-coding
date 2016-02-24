@@ -1,5 +1,14 @@
-#Function to draw a 2 dimensional histogram based on data from our class survey.
-#The histogram compares whether or not someone is a Seahawks fan to the kind of pet they like
+###########################
+# Ryker Schwartzenberger
+# Luke Baker
+# Patrick Smith
+# Laura Rickey
+# INFO-498FE
+# a7-collaborative-coding
+###########################
+
+# Function to draw a 2 dimensional histogram based on data from our class survey.
+# The histogram compares whether or not someone is a Seahawks fan to the kind of pet they like
 graph1 <- function(data) {
   data %>% 
     #Arrange the data in order to manipulate the order the bins are displayed in
