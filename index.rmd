@@ -26,10 +26,15 @@ source('scripts/build-graph-2.r')
 # Pull student survey data from INFO-498F repository.
 data <- read.csv('https://raw.githubusercontent.com/INFO-498F/a7-survey-data/master/intro_survey_data.csv')
 
+pet_data <- students(data)
+country_data <- countries(data)
+
 ```
 
 ##---------------------------------------------------------------------------------------------##
-##Introductory Paragraph about data analysis##
+This webpage is an analysis of the student survey taken by **`r pet_data$students`** students in INFO-498F Winter 2016. 
+Of those students, **`r pet_data$dog`** answered that they were dog people, **`r pet_data$cat`** were cat people, 
+and **`r pet_data$both`** reported that they were both cat and dog people. **`r pet_data$neither`** reported that they were neither a cat or a dog person. In addition to the data collected about cats, the survey also asked participants about where they have visited. The average number of countries visited by each student was **`r country_data$mean`**, with the maximum number of countries visited by a single student being **`r country_data$max`**. In addition, there were **`r country_data$over`** students who have visited 10 or more separate countries. 
 
 
 ##---------------------------------------------------------------------------------------------##
