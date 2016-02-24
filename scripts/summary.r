@@ -22,6 +22,7 @@ students <- function(x) {
 }
 
 
+
 #What is the mean and max number of countries visited by the students in this class
 #How many students visited over 10 countries
 countries <- function(x) {
